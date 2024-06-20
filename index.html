@@ -1,0 +1,198 @@
+<h1>Force One</h1>
+<style>
+  body {
+    background-color: #ff0000; /* XP Red */
+    font-family: "Arial", sans-serif;
+  }
+  .hack-platform {
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f0f0f0; /* XP Window Background */
+    border: 1px solid #d3d3d3; /* XP Window Border */
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000000;
+  }
+  .hack-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ff4500; /* XP Red Button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .hack-button:hover {
+    background-color: #ff6347; /* XP Red Button Hover */
+  }
+  .hack-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .hack-section {
+    width: 45%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff; /* XP Section Background */
+    border: 1px solid #d3d3d3; /* XP Section Border */
+    border-radius: 5px;
+    box-shadow: 0 0 5px #000000;
+  }
+  .hack-section h3 {
+    margin-top: 0;
+  }
+  .command-prompt {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    background-color: #000000;
+    color: #00ff00;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+    overflow-y: auto;
+  }
+  .command-prompt input {
+    width: 100%;
+    background-color: #000000;
+    color: #00ff00;
+    border: none;
+    outline: none;
+  }
+</style>
+
+<div class="hack-platform">
+  <h2>Force One Hacking Dashboard</h2>
+  <div class="hack-dashboard">
+    <div class="hack-section">
+      <h3>Network Tools</h3>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Network Scan
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Port Scanner
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Packet Sniffer
+      </button>
+    </div>
+    <div class="hack-section">
+      <h3>Password Tools</h3>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Password Cracker
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Brute Force
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Dictionary Attack
+      </button>
+    </div>
+    <div class="hack-section">
+      <h3>System Exploits</h3>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        System Exploit
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Privilege Escalation
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Remote Code Execution
+      </button>
+    </div>
+    <div class="hack-section">
+      <h3>Data Tools</h3>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Data Encryption
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Data Decryption
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Data Exfiltration
+      </button>
+    </div>
+    <div class="hack-section">
+      <h3>Firewall Tools</h3>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Firewall Bypass
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Firewall Disable
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Firewall Rules
+      </button>
+    </div>
+    <div class="hack-section">
+      <h3>Access Tools</h3>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Root Access
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Admin Access
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        User Access
+      </button>
+    </div>
+    <div class="hack-section">
+      <h3>Malware Tools</h3>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Malware Deployment
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Virus Injection
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        Trojan Horse
+      </button>
+    </div>
+    <div class="hack-section">
+      <h3>System Control</h3>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        System Takeover
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        System Shutdown
+      </button>
+      <button class="hack-button" onclick="openCommandPrompt()">
+        System Reboot
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="command-prompt" id="commandPrompt">
+  <div id="commandOutput"></div>
+  <input type="text" id="commandInput" onkeydown="handleCommand(event)" />
+</div>
+
+<script>
+  function openCommandPrompt() {
+    document.getElementById("commandPrompt").style.display = "block";
+    document.getElementById("commandInput").focus();
+  }
+
+  function handleCommand(event) {
+    if (event.key === "Enter") {
+      const input = document.getElementById("commandInput").value;
+      const output = document.getElementById("commandOutput");
+      if (input === "help") {
+        output.innerHTML +=
+          "<p>Available commands: network_scan, port_scanner, packet_sniffer, password_cracker, brute_force, dictionary_attack, system_exploit, privilege_escalation, remote_code_execution, data_encryption, data_decryption, data_exfiltration, firewall_bypass, firewall_disable, firewall_rules, root_access, admin_access, user_access, malware_deployment, virus_injection, trojan_horse, system_takeover, system_shutdown, system_reboot</p>";
+      } else {
+        output.innerHTML += `<p>${input}: Command executed successfully!</p>`;
+      }
+      document.getElementById("commandInput").value = "";
+      output.scrollTop = output.scrollHeight;
+    }
+  }
+</script>
